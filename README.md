@@ -66,7 +66,7 @@ demonstrates how we may parameterize room-scale 3D scenes via a single implicit 
 replaces LSTM-based ray-marcher in SRNs with a fully-connected neural network & analytical gradients, enabling easy extraction of the final 3D geometry.
 * [Neural Radiance Fields (NeRF)](https://www.matthewtancik.com/nerf) (Mildenhall et al. 2020) proposes positional encodings, volumetric rendering & ray-direction conditioning for high-quality reconstruction of 
 single scenes, and has spawned a large amount of follow-up work on volumetric rendering of 3D implicit representations. 
-For a curated list of NeRF follow-up work specifically, see [awesome-NeRF](http://www.cs.ubc.ca/~lowe/vision.html)
+For a curated list of NeRF follow-up work specifically, see [awesome-NeRF](https://github.com/yenchenlin/awesome-NeRF)
 * [SDF-SRN: Learning Signed Distance 3D Object Reconstruction from Static Images](https://github.com/chenhsuanlin/signed-distance-SRN) (Lin et al. 2020), 
 demonstrates how we may train Scene Representation Networks from a single observation only.
 * [Pixel-NERF](https://alexyu.net/pixelnerf/) (Yu et al. 2020) proposes to condition a NeRF on local features lying on camera rays,
@@ -151,7 +151,7 @@ activation function, enabling the parameterization of functions with non-trivial
 * [Andreas Geiger: Neural Implicit Representations for 3D Vision (Occupancy Networks, Texture Fields, Occupancy Flow, Differentiable Volumetric Rendering, GRAF)](https://www.youtube.com/watch?v=F9mRv4v80w0)
 
 # Links
-* [awesome-NeRF](http://www.cs.ubc.ca/~lowe/vision.html) - List of implicit representations specifically on neural radiance fields (NeRF)
+* [awesome-NeRF](https://github.com/yenchenlin/awesome-NeRF) - List of implicit representations specifically on neural radiance fields (NeRF)
 
 ## License
 License: MIT
