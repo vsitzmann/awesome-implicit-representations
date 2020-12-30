@@ -49,7 +49,7 @@ representations in parameterizing geometry and seamlessly allow for learning pri
 * [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/abs/1812.03828) (Mescheder et al. 2019)
 * [IM-Net: Learning Implicit Fields for Generative Shape Modeling](https://arxiv.org/abs/1812.02822) (Chen et al. 2018)
 
-
+Since then, implicit neural representations have achieved state-of-the-art-results in 3D computer vision:
 * [Sal: Sign agnostic learning of shapes from raw data](https://github.com/matanatz/SAL) (Atzmon et al. 2019) shows how we may learn SDFs from raw data (i.e., without ground-truth sigend distance values)
 * [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) shows how we may learn SDFs from raw data (i.e., without ground-truth sigend distance values)
 * [Local Implicit Grid Representations for 3D Scenes](https://geometry.stanford.edu/papers/jsmhnf-lligrf3s-20/jsmhnf-lligrf3s-20.pdf), [Convolutional Occupancy Networks](https://arxiv.org/abs/2003.04618), [Deep Local Shapes: Learning Local SDF Priors for Detailed 3D Reconstruction](https://arxiv.org/abs/2003.10983)
@@ -95,21 +95,27 @@ from 2D observations only via Neural Radiance Fields.
 * [D-NeRF: Neural Radiance Fields for Dynamic Scenes](https://arxiv.org/abs/2011.13961)
 * [Deformable Neural Radiance Fields](https://nerfies.github.io/)
 * [Neural Radiance Flow for 4D View Synthesis and Video Processing](https://yilundu.github.io/nerflow/)
+* [Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes](http://www.cs.cornell.edu/~zl548/NSFF/)
+* [Space-time Neural Irradiance Fields for Free-Viewpoint Video](https://video-nerf.github.io/)
+* [Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Deforming Scene from Monocular Video](https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/)
 
-## Hybrid implicit / voxelgrid
+## Hybrid implicit / explicit (condition implicit on local features)
 The following three papers concurrently proposed to condition an implicit neural representation on local features stored in a voxelgrid:
 * [Local Implicit Grid Representations for 3D Scenes](https://geometry.stanford.edu/papers/jsmhnf-lligrf3s-20/jsmhnf-lligrf3s-20.pdf)
 * [Convolutional Occupancy Networks](https://arxiv.org/abs/2003.04618)
 * [Deep Local Shapes: Learning Local SDF Priors for Detailed 3D Reconstruction](https://arxiv.org/abs/2003.10983)
 
-
 * [Neural Sparse Voxel Fields](https://github.com/facebookresearch/NSVF) Applies a similar concept to neural radiance fields.
+
+The following papers condition a deep signed distance function on local patches:
+* [Local Deep Implicit Functions for 3D Shape](https://ldif.cs.princeton.edu/)
+* [PatchNets: Patch-Based Generalizable Deep Implicit 3D Shape Representations](http://gvv.mpi-inf.mpg.de/projects/PatchNets/)
 
 ## Representation learning with implicit neural representations for downstream tasks
 * [Inferring Semantic Information with 3D Neural Scene Representations](https://www.computationalimaging.org/publications/semantic-srn/) leverages
 features learned by Scene Representation Networks for weakly supervised semantic segmentation of 3D objects.
 
-## On Meta-Learning with Neural Implicit Representations
+## Generalization & Meta-Learning with Neural Implicit Representations
 * DeepSDF, Occupancy Networks, IM-Net concurrently proposed conditioning via concatenation.
 * [Pifu: Pixel-aligned implicit function for high-resolution clothed human digitization](https://shunsukesaito.github.io/PIFu/) (Saito et al. 2019)
 proposed to locally condition implicit representations on ray features extracted from context images.
@@ -118,7 +124,7 @@ proposed to locally condition implicit representations on ray features extracted
 * [SDF-SRN: Learning Signed Distance 3D Object Reconstruction from Static Images](https://github.com/chenhsuanlin/signed-distance-SRN) (Lin et al. 2020) show how to learn 3D implicit representations from single-image supervision only.
 * [Learned Initializations for Optimizing Coordinate-Based Neural Representations](https://www.matthewtancik.com/learnit) (Tancik et al. 2020) explored gradient-based meta-learning for NeRF.
 
-## On fitting high-frequency detail with positional encoding & periodic nonlinearities
+## Fitting high-frequency detail with positional encoding & periodic nonlinearities
 * [Neural Radiance Fields (NeRF)](https://www.matthewtancik.com/nerf) (Mildenhall et al. 2020) proposed positional encodings.
 * [Implicit Neural Representations with Periodic Activation Functions](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020) proposed implicit representations with periodic nonlinearities.
 * [Fourier features let networks learn high frequency functions in low dimensional domains](https://people.eecs.berkeley.edu/~bmild/fourfeat/) (Tancik et al. 2020) explores positional encodings in an NTK framework.
@@ -127,6 +133,7 @@ proposed to locally condition implicit representations on ray features extracted
 * [Compositional Pattern-Producing Networks: Compositional pattern producing networks: A novel abstraction of development](https://link.springer.com/content/pdf/10.1007/s10710-007-9028-8.pdf) (Stanley et al. 2007) 
 first proposed to parameterize images implicitly via neural networks.
 * [Implicit Neural Representations with Periodic Activation Functions](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020) proposed to generalize across implicit representations of images via hypernetworks.
+* [X-Fields: Implicit Neural View-, Light- and Time-Image Interpolation](https://xfields.mpi-inf.mpg.de/) (Bemana et al. 2020) parameterizes the Jacobian of pixel position with respect to view, time, illumination, etc. to naturally interpolate images.
 * [Learning Continuous Image Representation with Local Implicit Image Function](https://github.com/yinboc/liif) (Chen et al. 2020) proposed a hypernetwork-based GAN for images.
 
 ## Composing implicit neural representations
