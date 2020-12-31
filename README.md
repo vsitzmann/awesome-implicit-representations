@@ -148,10 +148,14 @@ activation function, enabling the parameterization of functions with non-trivial
 * [AutoInt: Automatic Integration for Fast Neural Volume Rendering](https://davidlindell.com/publications/autoint) (Lindell et al. 2020)
 
 ## Generative Adverserial Networks with Implicit Representations
+### For 3D
 * [Generative Radiance Fields for 3D-Aware Image Synthesis](https://autonomousvision.github.io/graf/) (Schwarz et al. 2020)
+* [pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/abs/2012.00926) (Chan et al. 2020)
+
+### For 2D
+* [Adversarial Generation of Continuous Images](https://arxiv.org/abs/2011.12026) (Skorokhodov et al. 2020)
 * [Learning Continuous Image Representation with Local Implicit Image Function](https://github.com/yinboc/liif) (Chen et al. 2020) 
 * [Image Generators with Conditionally-Independent Pixel Synthesis](https://arxiv.org/abs/2011.13775) (Anokhin et al. 2020)
-* [pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/abs/2012.00926) (Chan et al. 2020)
 
 # Talks
 * [Vincent Sitzmann: Implicit Neural Scene Representations (Scene Representation Networks, MetaSDF, Semantic Segmentation with Implicit Neural Representations, SIREN)](https://www.youtube.com/watch?v=__F9CCqbWQk&amp;t=1s)
