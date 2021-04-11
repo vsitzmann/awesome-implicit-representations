@@ -50,12 +50,14 @@ representations in parameterizing geometry and seamlessly allow for learning pri
 * [IM-Net: Learning Implicit Fields for Generative Shape Modeling](https://arxiv.org/abs/1812.02822) (Chen et al. 2018)
 
 Since then, implicit neural representations have achieved state-of-the-art-results in 3D computer vision:
-* [Sal: Sign agnostic learning of shapes from raw data](https://github.com/matanatz/SAL) (Atzmon et al. 2019) shows how we may learn SDFs from raw data (i.e., without ground-truth sigend distance values)
-* [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) shows how we may learn SDFs from raw data (i.e., without ground-truth sigend distance values)
+* [Sal: Sign agnostic learning of shapes from raw data](https://github.com/matanatz/SAL) (Atzmon et al. 2019) shows how we may learn SDFs from raw data (i.e., without ground-truth signed distance values)
+* [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) shows how we may learn SDFs from raw data (i.e., without ground-truth signed distance values)
 * [Local Implicit Grid Representations for 3D Scenes](https://geometry.stanford.edu/papers/jsmhnf-lligrf3s-20/jsmhnf-lligrf3s-20.pdf), [Convolutional Occupancy Networks](https://arxiv.org/abs/2003.04618), [Deep Local Shapes: Learning Local SDF Priors for Detailed 3D Reconstruction](https://arxiv.org/abs/2003.10983)
 concurrently proposed hybrid voxelgrid/implicit representations to fit large-scale 3D scenes.
 * [Implicit Neural Representations with Periodic Activation Functions](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020) 
 demonstrates how we may parameterize room-scale 3D scenes via a single implicit neural representation by leveraging sinusoidal activation functions.
+* [Neural Unsigned Distance Fields for Implicit Function Learning](https://arxiv.org/pdf/2010.13938.pdf) (Chibane et al. 2020) 
+proposes to learn unsigned distance fields from raw point clouds, doing away with the requirement of water-tight surfaces.
 
 ## Implicit representations of Geometry and Appearance 
 ### From 2D supervision only (“inverse graphics”)
@@ -100,7 +102,8 @@ from 2D observations only via Neural Radiance Fields.
 * [Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Deforming Scene from Monocular Video](https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/)
 
 ## Hybrid implicit / explicit (condition implicit on local features)
-The following three papers concurrently proposed to condition an implicit neural representation on local features stored in a voxelgrid:
+The following four papers concurrently proposed to condition an implicit neural representation on local features stored in a voxelgrid:
+* [Implicit Functions in Feature Space for 3D ShapeReconstruction and Completion](https://virtualhumans.mpi-inf.mpg.de/papers/chibane20ifnet/chibane20ifnet.pdf)
 * [Local Implicit Grid Representations for 3D Scenes](https://geometry.stanford.edu/papers/jsmhnf-lligrf3s-20/jsmhnf-lligrf3s-20.pdf)
 * [Convolutional Occupancy Networks](https://arxiv.org/abs/2003.04618)
 * [Deep Local Shapes: Learning Local SDF Priors for Detailed 3D Reconstruction](https://arxiv.org/abs/2003.10983)
@@ -151,15 +154,28 @@ activation function, enabling the parameterization of functions with non-trivial
 ### For 3D
 * [Generative Radiance Fields for 3D-Aware Image Synthesis](https://autonomousvision.github.io/graf/) (Schwarz et al. 2020)
 * [pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/abs/2012.00926) (Chan et al. 2020)
+* [Unconstrained Scene Generation with Locally Conditioned Radiance Fields](https://arxiv.org/pdf/2104.00670.pdf) (DeVries et al. 2021) Leverage a hybrid implicit-explicit representation, 
+  by generating a 2D feature grid floorplan with a classic convolutional GAN, and then conditioning a 3D neural implicit representation on these features.
+  This enables generation of room-scale 3D scenes.
 
 ### For 2D
-* [Adversarial Generation of Continuous Images](https://arxiv.org/abs/2011.12026) (Skorokhodov et al. 2020)
+* [Adversarial Generation of Continuous Images](https://arxiv.org/abs/2011.12026) (Skorokhodov et al. 2020) 
 * [Learning Continuous Image Representation with Local Implicit Image Function](https://github.com/yinboc/liif) (Chen et al. 2020) 
 * [Image Generators with Conditionally-Independent Pixel Synthesis](https://arxiv.org/abs/2011.13775) (Anokhin et al. 2020)
+
+# Image-to-image translation
+* [Spatially-Adaptive Pixelwise Networks for Fast Image Translation](https://arxiv.org/pdf/2012.02992.pdf) (Shaham et al. 2020)
+leverages a hybrid implicit-explicit representation for fast high-resolution image2image translation.
+  
+# Articulated representations
+* [NASA: Neural Articulated Shape Approximation](https://virtualhumans.mpi-inf.mpg.de/papers/NASA20/NASA.pdf) (Deng et al. 2020) 
+represents an articulated object as a composition of local, deformable implicit elements.
 
 # Talks
 * [Vincent Sitzmann: Implicit Neural Scene Representations (Scene Representation Networks, MetaSDF, Semantic Segmentation with Implicit Neural Representations, SIREN)](https://www.youtube.com/watch?v=__F9CCqbWQk&amp;t=1s)
 * [Andreas Geiger: Neural Implicit Representations for 3D Vision (Occupancy Networks, Texture Fields, Occupancy Flow, Differentiable Volumetric Rendering, GRAF)](https://www.youtube.com/watch?v=F9mRv4v80w0)
+* [Gerard Pons-Moll: Shape Representations: Parametric Meshes vs Implicit Functions](https://www.youtube.com/watch?v=_4E2iEmJXW8)
+* [Yaron Lipman: Implicit Neural Representations](https://www.youtube.com/watch?v=rUd6qiSNwHs&list=PLat4GgaVK09e7aBNVlZelWWZIUzdq0RQ2&index=11) 
 
 # Links
 * [awesome-NeRF](https://github.com/yenchenlin/awesome-NeRF) - List of implicit representations specifically on neural radiance fields (NeRF)
