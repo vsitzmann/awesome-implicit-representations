@@ -114,6 +114,9 @@ The following papers condition a deep signed distance function on local patches:
 * [Local Deep Implicit Functions for 3D Shape](https://ldif.cs.princeton.edu/)
 * [PatchNets: Patch-Based Generalizable Deep Implicit 3D Shape Representations](http://gvv.mpi-inf.mpg.de/projects/PatchNets/)
 
+### For point cloud registration
+* [DPDist: Comparing Point Clouds Using Deep Point Cloud Distance](https://github.com/dahliau/DPDist/) (Urbach et al. 2020) first proposed to use a pre-trained deep implicit representation for training a registration network over sparse point clouds directly. They train a deep implicit neural representation on local features extracts from a [3DmFV](https://github.com/sitzikbs/3DmFV-Net) representation.
+
 ## Representation learning with implicit neural representations for downstream tasks
 * [Inferring Semantic Information with 3D Neural Scene Representations](https://www.computationalimaging.org/publications/semantic-srn/) leverages
 features learned by Scene Representation Networks for weakly supervised semantic segmentation of 3D objects.
