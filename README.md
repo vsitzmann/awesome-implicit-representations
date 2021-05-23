@@ -149,6 +149,7 @@ The following papers propose to assemble scenes from per-object 3D implicit neur
 * [Implicit Neural Representations with Periodic Activation Functions](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020) proposes to leverage the periodic sine as an 
 activation function, enabling the parameterization of functions with non-trivial higher-order derivatives and the solution of complicated PDEs.
 * [AutoInt: Automatic Integration for Fast Neural Volume Rendering](https://davidlindell.com/publications/autoint) (Lindell et al. 2020)
+* [MeshfreeFlowNet: Physics-Constrained Deep Continuous Space-Time Super-Resolution Framework](http://www.maxjiang.ml/proj/meshfreeflownet) (Jiang et al. 2020) performs super-resolution for spatio-temporal flow functions using local implicit representaitons, with auxiliary PDE losses.
 
 ## Generative Adverserial Networks with Implicit Representations
 ### For 3D
