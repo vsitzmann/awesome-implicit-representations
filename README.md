@@ -163,6 +163,7 @@ activation function, enabling the parameterization of functions with non-trivial
 * [Adversarial Generation of Continuous Images](https://arxiv.org/abs/2011.12026) (Skorokhodov et al. 2020) 
 * [Learning Continuous Image Representation with Local Implicit Image Function](https://github.com/yinboc/liif) (Chen et al. 2020) 
 * [Image Generators with Conditionally-Independent Pixel Synthesis](https://arxiv.org/abs/2011.13775) (Anokhin et al. 2020)
+* [Omni-GAN: On the Secrets of cGANs and Beyond](https://arxiv.org/abs/2011.13074) (Zhou et al. 2021)
 
 # Image-to-image translation
 * [Spatially-Adaptive Pixelwise Networks for Fast Image Translation](https://arxiv.org/pdf/2012.02992.pdf) (Shaham et al. 2020)
