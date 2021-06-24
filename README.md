@@ -1,23 +1,23 @@
 # Awesome Implicit Neural Representations [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 A curated list of resources on implicit neural representations, inspired by [awesome-computer-vision](https://github.com/jbhuang0604/awesome-computer-vision).
-Work-in-progress.
 
-This list does not aim to be exhaustive, as implicit neural representations are a rapidly evolving & growing research field with
-hundreds of papers to date. 
+This list does __not aim to be exhaustive__, as implicit neural representations are a rapidly evolving & growing research field with
+hundreds of papers to date. Instead, it lists the papers that I give my students to read, which introduce key concepts & foundations of 
+implicit neural representations across applications. I will therefore generally __not merge pull requests__. 
+This is not an evaluation of the quality or impact of a paper, but rather the result of my and my students' research interests.
 
-Instead, this list aims to list papers introducing key concepts & foundations of implicit neural representations across
-applications. It's a great reading list if you want to get started in this area!
+However, if you see potential for another list that is broader or narrower in scope, get in touch, and I'm happy 
+to link to it right here and contribute to it as well as I can!
 
-For most papers, there is a short summary of the most important contributions.
-
-Disclosure: I am an author on the following papers:
+Disclosure: I am an author on the following papers.
 * [Scene Representation Networks: Continuous 3D-Structure-Aware Neural Scene Representations](https://vsitzmann.github.io/srns/)
 * [MetaSDF: MetaSDF: Meta-Learning Signed Distance Functions](https://vsitzmann.github.io/metasdf/)
 * [Implicit Neural Representations with Periodic Activation Functions](https://vsitzmann.github.io/siren/)
 * [Inferring Semantic Information with 3D Neural Scene Representations](https://www.computationalimaging.org/publications/semantic-srn/)
+* [Light Field Networks: Neural Scene Representations with Single-Evaluation Rendering](vsitzmann.github.io/lfns/)
 
 ## What are implicit neural representations?
-Implicit Neural Representations (sometimes also referred to coordinate-based representations) are a novel way to parameterize
+Implicit Neural Representations (sometimes also referred to as coordinate-based representations) are a novel way to parameterize
 signals of all kinds. Conventional signal representations are usually discrete - for instance, images are discrete grids
 of pixels, audio signals are discrete samples of amplitudes, and 3D shapes are usually parameterized as grids of voxels,
 point clouds, or meshes. In contrast, Implicit Neural Representations parameterize a signal as a *continuous function* that 
@@ -36,10 +36,26 @@ representations have "infinite resolution" - they can be sampled at arbitrary sp
 This is immediately useful for a number of applications, such as super-resolution, or in parameterizing signals in 3D and higher dimensions,
 where memory requirements grow intractably fast with spatial resolution.
 
-However, in the future, the key promise of implicit neural representations lie in algorithms that directly operate in the space
+Further, generalizing across neural implicit representations amounts to learning a prior over a space of functions, implemented
+via learning a prior over the weights of neural networks - this is commonly referred to as meta-learning and is an extremely exciting
+intersection of two very active research areas!
+
+Another exciting overlap is between neural implicit representations and the study of symmetries in neural network architectures -
+for intance, creating a neural network architecture that is 3D rotation-equivariant immediately yields a viable path to rotation-equivariant generative models via neural implicit representations.
+
+Another key promise of implicit neural representations lie in algorithms that directly operate in the space
 of these representations. In other words: What's the "convolutional neural network" equivalent of a neural network
 operating on images represented by implicit representations? Questions like these offer a path towards a class of algorithms
 that are independent of spatial resolution!
+
+# Colabs
+This is a list of Google Colabs that immediately allow you to jump in and toy around with implicit neural representations!
+* [Implicit Neural Representations with Periodic Activation Functions](https://colab.research.google.com/github/vsitzmann/siren/blob/master/explore_siren.ipynb)
+shows how to fit images, audio signals, and even solve simple Partial Differential Equations with the SIREN architecture.
+* [Neural Radiance Fields (NeRF)](https://colab.research.google.com/github/bmild/nerf/blob/master/tiny_nerf.ipynb)
+shows how to fit a neural radiance field, allowing novel view synthesis of a single 3D scene.
+* [MetaSDF & MetaSiren](https://colab.research.google.com/github/vsitzmann/metasdf/blob/master/MetaSDF.ipynb) shows how 
+  you can leverage gradient-based meta-learning to generalize across neural implicit representations.
 
 # Papers
 ## Implicit Neural Representations of Geometry
@@ -61,6 +77,9 @@ proposes to learn unsigned distance fields from raw point clouds, doing away wit
 
 ## Implicit representations of Geometry and Appearance 
 ### From 2D supervision only (“inverse graphics”)
+3D scenes can be represented as 3D-structured neural scene representations, i.e., neural implicit representations that map a 
+3D coordinate to a representation of whatever is at that 3D coordinate. This then requires the formulation of a neural renderer,
+in particular, a ray-marcher, which performs rendering by repeatedly sampling the neural implicit representation along a ray.
 * [Scene Representation Networks: Continuous 3D-Structure-Aware Neural Scene Representations](https://vsitzmann.github.io/srns/) proposed to learn an implicit representations
  of 3D shape and geometry given only 2D images, via a differentiable ray-marcher, and generalizes across 3D scenes for 
  reconstruction from a single image via hyper-networks. This was demonstrated for single-object scenes, but also for simple room-scale scenes (see talk).
@@ -77,9 +96,11 @@ demonstrates how we may train Scene Representation Networks from a single observ
 demonstrates sphere-tracing with positional encodings for reconstruction of complex 3D scenes, and proposes a surface normal and view-direction
 dependent rendering network for capturing view-dependent effects.
 
-#### With view-dependent effects
-* [Neural Radiance Fields (NeRF)](https://www.matthewtancik.com/nerf) (Mildenhall et al. 2020)
-* [Multiview neural surface reconstruction by disentangling geometry and appearance](https://lioryariv.github.io/idr/) (Yariv et al. 2020)
+One may also encode geometry and appearance of a 3D scene via its 360-degree, 4D light field. This obviates the need for 
+ray-marching and enables real-time rendering and fast training with minimal memory footprint, but requires additional machinery to ensure
+multi-view consistency.
+* [Light Field Networks: Neural Scene Representations with Single-Evaluation Rendering](vsitzmann.github.io/lfns/) (Sitzmann et al. 2021) 
+proposes to represent 3D scenes via their 360-degree light field parameterized as a neural implicit representation.
 
 ### From 3D supervision
 * [Pifu: Pixel-aligned implicit function for high-resolution clothed human digitization](https://shunsukesaito.github.io/PIFu/) (Saito et al. 2019)
@@ -101,6 +122,12 @@ from 2D observations only via Neural Radiance Fields.
 * [Space-time Neural Irradiance Fields for Free-Viewpoint Video](https://video-nerf.github.io/)
 * [Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Deforming Scene from Monocular Video](https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/)
 
+## Symmetries in Implicit Neural Representations
+* [Vector Neurons: A General Framework for SO(3)-Equivariant Networks](https://cs.stanford.edu/~congyue/vnn/) (Deng et al. 2021) 
+makes conditional implicit neural representations equivariant to SO(3), enabling the learning of a rotation-equivariant
+  shape space and subsequent reconstruction of 3D geometry of single objects in unseen poses.
+
+
 ## Hybrid implicit / explicit (condition implicit on local features)
 The following four papers concurrently proposed to condition an implicit neural representation on local features stored in a voxelgrid:
 * [Implicit Functions in Feature Space for 3D ShapeReconstruction and Completion](https://virtualhumans.mpi-inf.mpg.de/papers/chibane20ifnet/chibane20ifnet.pdf)
@@ -108,7 +135,10 @@ The following four papers concurrently proposed to condition an implicit neural 
 * [Convolutional Occupancy Networks](https://arxiv.org/abs/2003.04618)
 * [Deep Local Shapes: Learning Local SDF Priors for Detailed 3D Reconstruction](https://arxiv.org/abs/2003.10983)
 
+This has since been leveraged for inverse graphics as well:
 * [Neural Sparse Voxel Fields](https://github.com/facebookresearch/NSVF) Applies a similar concept to neural radiance fields.
+* [Pixel-NERF](https://alexyu.net/pixelnerf/) (Yu et al. 2020) proposes to condition a NeRF on local features lying on camera rays,
+  extracted from contact images, as proposed in PiFU (see "from 3D supervision").
 
 The following papers condition a deep signed distance function on local patches:
 * [Local Deep Implicit Functions for 3D Shape](https://ldif.cs.princeton.edu/)
@@ -159,9 +189,12 @@ activation function, enabling the parameterization of functions with non-trivial
   This enables generation of room-scale 3D scenes.
 
 ### For 2D
+For 2D image synthesis, neural implicit representations enable the generation of high-resolution images, while also 
+allowing the principled treatment of symmetries such as rotation and translation equivariance.
 * [Adversarial Generation of Continuous Images](https://arxiv.org/abs/2011.12026) (Skorokhodov et al. 2020) 
 * [Learning Continuous Image Representation with Local Implicit Image Function](https://github.com/yinboc/liif) (Chen et al. 2020) 
 * [Image Generators with Conditionally-Independent Pixel Synthesis](https://arxiv.org/abs/2011.13775) (Anokhin et al. 2020)
+* [Alias-Free GAN](https://nvlabs.github.io/alias-free-gan/) (Karras et al. 2021)
 
 # Image-to-image translation
 * [Spatially-Adaptive Pixelwise Networks for Fast Image Translation](https://arxiv.org/pdf/2012.02992.pdf) (Shaham et al. 2020)
