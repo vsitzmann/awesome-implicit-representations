@@ -1,7 +1,7 @@
 # Awesome Implicit Neural Representations [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 A curated list of resources on implicit neural representations, inspired by [awesome-computer-vision](https://github.com/jbhuang0604/awesome-computer-vision).
 
-This list does __not aim to be exhaustive__, as implicit neural representations are a rapidly evolving & growing research field with
+This list does __not aim to be exhaustive__, as implicit neural representations are a rapidly growing research field with
 hundreds of papers to date. Instead, it lists the papers that I give my students to read, which introduce key concepts & foundations of 
 implicit neural representations across applications. I will therefore generally __not merge pull requests__. 
 This is not an evaluation of the quality or impact of a paper, but rather the result of my and my students' research interests.
@@ -15,6 +15,14 @@ Disclosure: I am an author on the following papers.
 * [Implicit Neural Representations with Periodic Activation Functions](https://vsitzmann.github.io/siren/)
 * [Inferring Semantic Information with 3D Neural Scene Representations](https://www.computationalimaging.org/publications/semantic-srn/)
 * [Light Field Networks: Neural Scene Representations with Single-Evaluation Rendering](vsitzmann.github.io/lfns/)
+
+
+## Table of contents
+- [What are implicit neural representations?](#what-are-implicit-neural-representations) 
+- [Why are they interesting?](#why-are-they-interesting) 
+- [Colabs](#colabs) 
+- [Papers](#papers) 
+- [Talks](#Talks)
 
 ## What are implicit neural representations?
 Implicit Neural Representations (sometimes also referred to as coordinate-based representations) are a novel way to parameterize
@@ -35,18 +43,15 @@ representations have "infinite resolution" - they can be sampled at arbitrary sp
 
 This is immediately useful for a number of applications, such as super-resolution, or in parameterizing signals in 3D and higher dimensions,
 where memory requirements grow intractably fast with spatial resolution.
-
 Further, generalizing across neural implicit representations amounts to learning a prior over a space of functions, implemented
 via learning a prior over the weights of neural networks - this is commonly referred to as meta-learning and is an extremely exciting
 intersection of two very active research areas!
-
 Another exciting overlap is between neural implicit representations and the study of symmetries in neural network architectures -
 for intance, creating a neural network architecture that is 3D rotation-equivariant immediately yields a viable path to rotation-equivariant generative models via neural implicit representations.
 
 Another key promise of implicit neural representations lie in algorithms that directly operate in the space
 of these representations. In other words: What's the "convolutional neural network" equivalent of a neural network
-operating on images represented by implicit representations? Questions like these offer a path towards a class of algorithms
-that are independent of spatial resolution!
+operating on images represented by implicit representations?
 
 # Colabs
 This is a list of Google Colabs that immediately allow you to jump in and toy around with implicit neural representations!
@@ -171,8 +176,8 @@ first proposed to parameterize images implicitly via neural networks.
 
 ## Composing implicit neural representations
 The following papers propose to assemble scenes from per-object 3D implicit neural representations.
-* [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/2011.12100)
-* [Object-centric Neural Rendering](https://arxiv.org/pdf/2012.08503.pdf)
+* [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/2011.12100) (Niemeyer et al. 2021) 
+* [Object-centric Neural Rendering](https://arxiv.org/pdf/2012.08503.pdf) (Guo et al. 2020)
 
 ## Implicit Representations for Partial Differential Equations & Boundary Value Problems
 * [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) learns SDFs by enforcing constraints of the Eikonal equation via the loss.
@@ -197,11 +202,11 @@ allowing the principled treatment of symmetries such as rotation and translation
 * [Image Generators with Conditionally-Independent Pixel Synthesis](https://arxiv.org/abs/2011.13775) (Anokhin et al. 2020)
 * [Alias-Free GAN](https://nvlabs.github.io/alias-free-gan/) (Karras et al. 2021)
 
-# Image-to-image translation
+## Image-to-image translation
 * [Spatially-Adaptive Pixelwise Networks for Fast Image Translation](https://arxiv.org/pdf/2012.02992.pdf) (Shaham et al. 2020)
 leverages a hybrid implicit-explicit representation for fast high-resolution image2image translation.
   
-# Articulated representations
+## Articulated representations
 * [NASA: Neural Articulated Shape Approximation](https://virtualhumans.mpi-inf.mpg.de/papers/NASA20/NASA.pdf) (Deng et al. 2020) 
 represents an articulated object as a composition of local, deformable implicit elements.
 
