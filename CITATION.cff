@@ -4,5 +4,6 @@ authors:
   - family-names: Sitzmann
     given-names: Vincent
     orcid: https://orcid.org/0000-0002-0107-5704
-title: "Awesome Neural Implicit Representations"
+title: "Awesome Implicit Representations - A curated list of resources on implicit neural representations"
 version: 1.0.0
+url: https://github.com/vsitzmann/awesome-implicit-representations
