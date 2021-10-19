@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If this overiew is useful to you, please cite as below."
+authors:
+  - family-names: Sitzmann
+    given-names: Vincent
+    orcid: https://orcid.org/0000-0002-0107-5704
+title: "Awesome Neural Implicit Representations"
+version: 1.0.0
