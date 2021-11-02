@@ -1,6 +1,13 @@
 # Awesome Implicit Neural Representations [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 A curated list of resources on implicit neural representations, inspired by [awesome-computer-vision](https://github.com/jbhuang0604/awesome-computer-vision).
 
+## Hiring graduate students!
+I am looking for graduate students to join my new lab at MIT CSAIL in July 2022. 
+If you are excited about neural implicit representations, neural rendering, neural scene representations, and their applications
+in vision, graphics, and robotics, apply [here](https://gradapply.mit.edu/eecs/apply/login/)! In the webform, you can choose me as "Potential Adviser", 
+and in your SoP, please describe how our research interests are well-aligned. The deadline is Dec 15th!
+
+## Disclaimer
 This list does __not aim to be exhaustive__, as implicit neural representations are a rapidly growing research field with
 hundreds of papers to date. Instead, it lists the papers that I give my students to read, which introduce key concepts & foundations of 
 implicit neural representations across applications. I will therefore generally __not merge pull requests__. 
