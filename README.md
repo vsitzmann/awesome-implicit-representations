@@ -31,6 +31,7 @@ Disclosure: I am an author on the following papers.
 - [Papers](#papers) 
 - [Talks](#Talks)
 
+
 ## What are implicit neural representations?
 Implicit Neural Representations (sometimes also referred to as coordinate-based representations) are a novel way to parameterize
 signals of all kinds. Conventional signal representations are usually discrete - for instance, images are discrete grids
@@ -68,6 +69,9 @@ shows how to fit images, audio signals, and even solve simple Partial Differenti
 shows how to fit a neural radiance field, allowing novel view synthesis of a single 3D scene.
 * [MetaSDF & MetaSiren](https://colab.research.google.com/github/vsitzmann/metasdf/blob/master/MetaSDF.ipynb) shows how 
   you can leverage gradient-based meta-learning to generalize across neural implicit representations.
+* [Neural Descriptor Fields](https://colab.research.google.com/drive/16bFIFq_E8mnAVwZ_V2qQiKp4x4D0n1sG?usp=sharing) Learn how
+you can use globally conditioned neural implicit representations as self-supervised correspondence learners, enabling robotics
+imitation tasks.
 
 # Papers
 ## Implicit Neural Representations of Geometry
@@ -139,7 +143,6 @@ from 2D observations only via Neural Radiance Fields.
 makes conditional implicit neural representations equivariant to SO(3), enabling the learning of a rotation-equivariant
   shape space and subsequent reconstruction of 3D geometry of single objects in unseen poses.
 
-
 ## Hybrid implicit / explicit (condition implicit on local features)
 The following four papers concurrently proposed to condition an implicit neural representation on local features stored in a voxelgrid:
 * [Implicit Functions in Feature Space for 3D ShapeReconstruction and Completion](https://virtualhumans.mpi-inf.mpg.de/papers/chibane20ifnet/chibane20ifnet.pdf)
@@ -156,9 +159,19 @@ The following papers condition a deep signed distance function on local patches:
 * [Local Deep Implicit Functions for 3D Shape](https://ldif.cs.princeton.edu/)
 * [PatchNets: Patch-Based Generalizable Deep Implicit 3D Shape Representations](http://gvv.mpi-inf.mpg.de/projects/PatchNets/)
 
-## Representation learning with implicit neural representations for downstream tasks
+## Learning correspondence with Neural Implicit Representations
 * [Inferring Semantic Information with 3D Neural Scene Representations](https://www.computationalimaging.org/publications/semantic-srn/) leverages
 features learned by Scene Representation Networks for weakly supervised semantic segmentation of 3D objects.
+* [Neural Descriptor Fields: SE(3)-Equvariant Object Representations for Manipulation](https://yilundu.github.io/ndf/) 
+leverages features learned by occupancy networks to establish correspondence, used for robotics imitation learning.
+  
+## Robotics Applications
+* [ 3D Neural Scene Representations for Visuomotor Control](https://3d-representation-learning.github.io/nerf-dy/)
+  learns latent state space for robotics tasks using neural rendering, and subsequently expresses policies in that latent space.
+* [Full-Body Visual Self-Modeling of Robot Morphologies ](https://robot-morphology.cs.columbia.edu/)
+  uses neural implicit geometry representation for learning a robot self-model, enabling space occupancy queries for given joint angles.
+* [Neural Descriptor Fields: SE(3)-Equvariant Object Representations for Manipulation](https://yilundu.github.io/ndf/)
+leverages neural fields & vector neurons as an object-centric representation that enables imitation learning of pick-and-place tasks, generalizing across SE(3) poses.
 
 ## Generalization & Meta-Learning with Neural Implicit Representations
 * DeepSDF, Occupancy Networks, IM-Net concurrently proposed conditioning via concatenation.
@@ -180,11 +193,14 @@ first proposed to parameterize images implicitly via neural networks.
 * [Implicit Neural Representations with Periodic Activation Functions](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020) proposed to generalize across implicit representations of images via hypernetworks.
 * [X-Fields: Implicit Neural View-, Light- and Time-Image Interpolation](https://xfields.mpi-inf.mpg.de/) (Bemana et al. 2020) parameterizes the Jacobian of pixel position with respect to view, time, illumination, etc. to naturally interpolate images.
 * [Learning Continuous Image Representation with Local Implicit Image Function](https://github.com/yinboc/liif) (Chen et al. 2020) proposed a hypernetwork-based GAN for images.
+* [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) uses FILM-conditioned MLP
+  as an image GAN.
 
 ## Composing implicit neural representations
 The following papers propose to assemble scenes from per-object 3D implicit neural representations.
 * [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/2011.12100) (Niemeyer et al. 2021) 
 * [Object-centric Neural Rendering](https://arxiv.org/pdf/2012.08503.pdf) (Guo et al. 2020)
+* [Unsupervised Discovery of Object Radiance Fields](https://kovenyu.com/uorf/) (Yu et al. 2021)
 
 ## Implicit Representations for Partial Differential Equations & Boundary Value Problems
 * [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) learns SDFs by enforcing constraints of the Eikonal equation via the loss.
@@ -200,6 +216,8 @@ activation function, enabling the parameterization of functions with non-trivial
 * [Unconstrained Scene Generation with Locally Conditioned Radiance Fields](https://arxiv.org/pdf/2104.00670.pdf) (DeVries et al. 2021) Leverage a hybrid implicit-explicit representation, 
   by generating a 2D feature grid floorplan with a classic convolutional GAN, and then conditioning a 3D neural implicit representation on these features.
   This enables generation of room-scale 3D scenes.
+* [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) uses FILM-conditioned MLP
+as an image GAN.
 
 ### For 2D
 For 2D image synthesis, neural implicit representations enable the generation of high-resolution images, while also 
