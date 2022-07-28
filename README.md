@@ -123,6 +123,7 @@ proposes to represent 3D scenes via their 360-degree light field parameterized a
 Pifu first introduced the concept of conditioning an implicit representation on local features extracted from context images. Follow-up work 
 achieves photo-realistic, real-time re-rendering.
 * [Texture Fields: Learning Texture Representations in Function Space](https://autonomousvision.github.io/texture-fields/) (Oechsle et al.)
+* [ShAPO 🎩: Implicit Representations for Multi Object Shape, Appearance, and Pose Optimization](https://zubair-irshad.github.io/projects/ShAPO.html) (M.Z.Irshad, S.Zakharov et al. 2022) combinedly optimizes for shape, pose and appearance using and implicit textured differentiable database of priors with a novel-octree based differentiable optimization. 
 
 ### For dynamic scenes
 * [Occupancy flow: 4d reconstruction by learning particle dynamics](https://avg.is.tuebingen.mpg.de/publications/niemeyer2019iccv) 
