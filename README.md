@@ -173,6 +173,10 @@ leverages features learned by occupancy networks to establish correspondence, us
 * [Neural Descriptor Fields: SE(3)-Equvariant Object Representations for Manipulation](https://yilundu.github.io/ndf/)
 leverages neural fields & vector neurons as an object-centric representation that enables imitation learning of pick-and-place tasks, generalizing across SE(3) poses.
 
+## Space Applications
+* [Geodesy of irregular small bodies via neural density fields: geodesyNets](https://arxiv.org/abs/2105.13031) learns an implicit representation using the gravitational signature of irregular bodies. [github](https://github.com/darioizzo/geodesyNets).
+* [Study of the asteroid Bennu using geodesyANNs and Osiris-Rex data](https://arxiv.org/abs/2109.14427) shows the possibility to learn an implicit representation of the asteroid Bennu from the NASA Osirix-Rex mission data.
+
 ## Generalization & Meta-Learning with Neural Implicit Representations
 * DeepSDF, Occupancy Networks, IM-Net concurrently proposed conditioning via concatenation.
 * [Pifu: Pixel-aligned implicit function for high-resolution clothed human digitization](https://shunsukesaito.github.io/PIFu/) (Saito et al. 2019)
@@ -218,6 +222,7 @@ activation function, enabling the parameterization of functions with non-trivial
   This enables generation of room-scale 3D scenes.
 * [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) uses FILM-conditioned MLP
 as an image GAN.
+
 
 ### For 2D
 For 2D image synthesis, neural implicit representations enable the generation of high-resolution images, while also 
