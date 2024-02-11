@@ -75,8 +75,9 @@ imitation tasks.
 
 # Papers
 ## Implicit Neural Representations of Geometry
-The following three papers first (and concurrently) demonstrated that implicit neural representations outperform grid-, point-, and mesh-based 
+The following four papers first (and concurrently) demonstrated that implicit neural representations outperform grid-, point-, and mesh-based 
 representations in parameterizing geometry and seamlessly allow for learning priors over shapes.
+* [Hypernetwork functional image representation](https://arxiv.org/pdf/1902.10404.pdf) (Klocek et al. 2019)
 * [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/abs/1901.05103) (Park et al. 2019) 
 * [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/abs/1812.03828) (Mescheder et al. 2019)
 * [IM-Net: Learning Implicit Fields for Generative Shape Modeling](https://arxiv.org/abs/1812.02822) (Chen et al. 2018)
